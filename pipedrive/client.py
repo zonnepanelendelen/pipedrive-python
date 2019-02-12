@@ -60,7 +60,7 @@ class Client:
             :return:
         """
         if response.status_code == 204 or response.status_code == 201:
-            return True
+            return response.json()
         elif response.status_code == 400:
             raise Exception(
                 "The URL {0} retrieved an {1} error. Please check your request body and try again.\nRaw message: {2}".format(
